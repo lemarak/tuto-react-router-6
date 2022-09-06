@@ -1,5 +1,5 @@
-import React from "react";
 import { NavLink, Outlet, useSearchParams } from "react-router-dom";
+import QueryNavLink from "../components/QueryNavLink";
 import { getInvoices } from "../data";
 
 const invoices = () => {
@@ -33,7 +33,7 @@ const invoices = () => {
           })
           .map((invoice) => {
             return (
-              <NavLink
+              <QueryNavLink
                 style={({ isActive }) => {
                   return {
                     display: "block",
@@ -45,7 +45,7 @@ const invoices = () => {
                 key={invoice.number}
               >
                 {invoice.name}
-              </NavLink>
+              </QueryNavLink>
             );
           })}
       </nav>
